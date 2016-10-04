@@ -31,7 +31,9 @@
     "got": "^6.3.0",
     "is-online": "^5.1.1",
     "meow": "^3.7.0",
-    "x-ray": "github:cvan/x-ray#patch-1"
+    "url-join": "^1.1.0",
+    "x-ray": "github:cvan/x-ray#patch-1",
+    "x-ray-nightmare": "^0.1.2"
   },
   "devDependencies": {
     "ava": "^0.14.0",

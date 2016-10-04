@@ -10,17 +10,23 @@ const cli = meow([
 	'  $ fetch-manifest-json https://jsfeatures.in'
 ]);
 
-//If no argument is supplied then show help
-if(cli.input.length === 0) {
+// If no argument is supplied, then show help.
+if (cli.input.length === 0) {
 	console.log(cli.help);
 	process.exit(0);
 }
 
 isOnline((err, online) => {
-	if(!online) {
+	if (!online) {
 		console.log('Please check your internet connectivity.');
 		process.exit(1);
 	}
 });
 
-fetchManifestJson(cli.input[0]).then(p => console.log(p))
+fetchManifestJson(cli.input[0])
+	.then(output => {
+		console.log(output);
+	})
+	.catch(err => {
+		console.error(err);
+	});
